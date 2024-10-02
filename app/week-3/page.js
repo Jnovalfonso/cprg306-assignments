@@ -11,7 +11,7 @@ export default function Page() {
             <div className="space-y-3">
                 {itemList.map((item, index) => (
                 <Item
-                    key={index} // Use index as key or a unique identifier if available
+                    key={index} 
                     name={item.name}
                     quantity={item.quantity}
                     category={item.category}
