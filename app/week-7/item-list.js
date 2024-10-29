@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
-import itemsJson from "./items.json";
+import { useState, useEffect } from "react";
 import Item from "../week-3/item";
 
-export default function ItemList (){
+export default function ItemList ({listItems = []}){
     const [sortBy, setSortBy] = useState("name");
-    const items = [...itemsJson];
+    const [items, setItems] = useState(listItems);
+
+    useEffect(() => {
+        setItems(listItems);
+      }, [listItems]);
 
     const categories = items.reduce((allCategories, item) => {
     if (!allCategories.includes(item.category)) {
