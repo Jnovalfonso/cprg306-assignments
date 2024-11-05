@@ -5,10 +5,17 @@ import ItemList from "./item-list";
 import itemsJson from "../week-6/items.json";
 import { useState } from "react";
 import MealIdeas from "./meal-ideas";
-import { split } from "postcss/lib/list";
 
 export default function Page() {
   const [items, setItems] = useState(itemsJson);
+
+  const [item, setItem] = useState({
+    id: "",
+    name: "",
+    emoji: "",
+    quantity: 1,
+    category: "Produce"
+  });
 
   const [selectedItemName, setSelectedItemName] = useState('');
 
