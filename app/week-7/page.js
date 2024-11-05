@@ -3,6 +3,7 @@
 import NewItem from "../week-5/new-item";
 import ItemList from "./item-list";
 import itemsJson from "../week-6/items.json";
+import MealIdeas from "../week-8/meal-ideas";
 import { useState } from "react";
 
 export default function Page() {
