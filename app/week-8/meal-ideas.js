@@ -69,7 +69,7 @@ export default function MealIdeas({itemName}) {
         <div>
             <ul>
                 {meals.map((meal) => (
-                    <li className="my-2 ">
+                    <li key={meal.idMeal} className="my-2 ">
                         <button key={meal.idMeal} className="text-left border-2 p-2 hover:bg-slate-300 transition-colors duration-200" onClick={() => setMealId(meal.idMeal)}>{meal.strMeal}</button>
                         {mealId === meal.idMeal && ingredients.length > 0 && (
                             <div>
