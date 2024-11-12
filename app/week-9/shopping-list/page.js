@@ -5,8 +5,19 @@ import ItemList from "./item-list";
 import itemsJson from "../../week-6/items.json";
 import { useState } from "react";
 import MealIdeas from "./meal-ideas";
+import { useUserAuth } from "../_utils/auth-context";
 
 export default function Page() {
+  const { user} = useUserAuth();
+    
+    if (!user) {
+        return (
+            <div>
+                <p>You are not signed in.</p>
+            </div>
+        );
+    }
+
   const [items, setItems] = useState(itemsJson);
 
   const [item, setItem] = useState({
