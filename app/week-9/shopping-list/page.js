@@ -9,14 +9,6 @@ import { useUserAuth } from "../_utils/auth-context";
 
 export default function Page() {
   const { user} = useUserAuth();
-    
-    if (!user) {
-        return (
-            <div>
-                <p>You are not signed in.</p>
-            </div>
-        );
-    }
 
   const [items, setItems] = useState(itemsJson);
 
@@ -63,6 +55,14 @@ export default function Page() {
     setSelectedItemName(name);
   }
 
+    if (!user) {
+      return (
+          <div>
+              <p>You are not signed in.</p>
+          </div>
+      );
+   } else {
+
     return (
       <main className="m-12 flex flex-row">
         <div>
@@ -78,3 +78,4 @@ export default function Page() {
       </main>
     );
   }
+}
